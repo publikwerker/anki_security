@@ -21,14 +21,20 @@ import anki_vector
 import io
 import time
 
+#Create an event listener for audio cue
+#In this instantce, it's upon hearing the
+#words "Hey, Vector"
+def wait_for_cue()
+
 def main():
   args = anki_vector.util.parse_command_args()
-  with anki_vector.Robot(args.serial, 
+  with anki_vector.Robot(args.serial,
     show_viewer=True, 
     enable_camera_feed=True,) as robot:
-    print("Say 'Documenting Disturbance'...")
+    robot.anim.play_animation("anim_observing_far_subtle_01")
+    robot.anim.play_animation("anim_referencing_curious_01_head_angle_20")
     print("Starting video viewer. Use Ctrl+C to quit.")
-    robot.say_text("Documenting disturbance")
+    robot.say_text("Quietly observing from the shadows.")
 
     try:
       while True:
