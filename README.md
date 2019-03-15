@@ -1,5 +1,7 @@
 # anki_security
 
+![](https://www.jbhifi.co.nz/FileLibrary/ProductResources/Images/111696-L-LO.jpg)
+
 The basic premise for this app was formed from observing Vector.
 When Vector charges, it assumes a "relaxed" posture and its display portrays mostly-closed eyes.
 If there is a loud noise, Vector "wakes up" and looks startled.
