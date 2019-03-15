@@ -1,12 +1,17 @@
 # anki_security
 
 ![](https://www.jbhifi.co.nz/FileLibrary/ProductResources/Images/111696-L-LO.jpg)
+_Vector_
 
 The basic premise for this app was formed from observing the Vector robot I bought my daughter for a "pet" for the holidays.
 When Vector charges, it assumes a "relaxed" posture and its display portrays mostly-closed eyes.
-If there is a loud noise, Vector "wakes up" and looks startled.
+Vector uses Alexa technology, so if there is a loud noise, Vector "wakes up" and looks startled.
 My goal is to build an app that reacts to these sudden noises by taking a short video or by taking several still images in sequence.
-After which, it would return to "sleep".
+After which, Vector would return to "sleep".
+
+
+![](https://www.theawesomedick.com/wp-content/uploads/2018/10/IMG_20181026_185208-264x300.jpg)
+_Vector in Sleep Mode_
 
 The manufacturers of Vector, Anki, have provided some solid documentation for developers to use. They provide a SDK (Software Development Kit), example files, and tutorials.
 One major hurdle I have encountered is that the SDK provides access to events like face recognition, object recognition, but no access to any event triggered by noises other than a pre-set `wake-word`, "Hey, Vector". 
