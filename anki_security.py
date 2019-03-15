@@ -25,15 +25,21 @@ import cv2
 #Create an event listener for audio cue
 #In this instance, it's upon hearing the
 #words "Hey, Vector"
-"""
-def wait_for_cue(name, msg):
-  print(name)
-  print(msg)
 
-with anki_vector.Robot() as robot:
-  robot.events.subscribe_by_name(wait_for_cue, event_name='say_it')
-  robot.conn.run_coroutine(robot.events.dispatch_event_by_name('say_it dispatched', event_name='say_it'))
-"""
+def on_wake_word(robot):
+  #give him sceptical eye display
+  robot.anim.play_animation("anim_observing_far_subtle_01")
+  #tilt his head up for better view of room
+  robot.anim.play_animation("anim_referencing_curious_01_head_angle_20")
+  print("Starting video viewer. Use Ctrl+C to quit.")
+
+  #voice notification
+  robot.say_text("Quietly observing from the shadows.")
+  #img = cv2.VideoCapture.read(robot.viewer.show_video())
+  #cv2.imwrite('surveill.avi', img)
+  time.sleep(20)
+  robot.viewer.stop_video
+
 def main():
   args = anki_vector.util.parse_command_args()
   with anki_vector.Robot(args.serial,
@@ -41,17 +47,8 @@ def main():
     #enable_audio_feed=True, #need to initialize first
     enable_camera_feed=True, #accesses video
     ) as robot:
-    #give him sceptical eye display
-    robot.anim.play_animation("anim_observing_far_subtle_01")
-    #tilt his head up for better view of room
-    robot.anim.play_animation("anim_referencing_curious_01_head_angle_20")
-    print("Starting video viewer. Use Ctrl+C to quit.")
+    on_wake_word(robot)
 
-    #voice notification
-    robot.say_text("Quietly observing from the shadows.")
-    img = cv2.VideoCapture.read(robot.viewer.show_video())
-    cv2.imwrite('surveill.avi', img)
-    
     try:
       while True:
         time.sleep(20)

@@ -31,20 +31,23 @@ evt = threading.Event()
 #In this instance, it's upon hearing the
 #words "Hey, Vector"
 
-def on_wake_word(robot, event_type, event):
-  
-  
+def on_wake_word(): 
+  robot.anim.play_animation("anim_observing_far_subtle_01")
+  robot.anim.play_animation("anim_referencing_curious_01_head_angle_20")
+  print("Starting video viewer. Use Ctrl+C to quit.")
+  robot.say_text("Quietly observing from the shadows.")
+  time.sleep(20)
+  robot.viewer.stop_video
 
+
+def main(): 
   args = anki_vector.util.parse_command_args()
   with anki_vector.Robot(args.serial,
     show_viewer=True, 
     enable_camera_feed=True,) as robot:
-    robot.anim.play_animation("anim_observing_far_subtle_01")
-    robot.anim.play_animation("anim_referencing_curious_01_head_angle_20")
-    print("Starting video viewer. Use Ctrl+C to quit.")
-    robot.say_text("Quietly observing from the shadows.")
-    robot.events.subscribe_by_name(wait_for_cue, event_name='say_it')
-    robot.conn.run_coroutine(robot.events.dispatch_event_by_name('say_it dispatched', event_name='say_it'))
+    on_wake_word = functools.partial(on_wake_word, robot)
+    robot.events.subscribe(on_wake_word, Events.wake_word)
+    #robot.conn.run_coroutine(robot.events.dispatch_event_by_name('say_it dispatched', event_name='say_it'))
 
     try:
       while True:
@@ -52,6 +55,8 @@ def on_wake_word(robot, event_type, event):
     except KeyboardInterrupt:
       pass
 
+  robot.events.unsubsribe(on_wake_word, Events.wake_word)
+
 if __name__ == "__main__":
-  on_wake_word(anki_vector.robot, wake_word, )
+  main()
 
