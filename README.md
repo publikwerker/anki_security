@@ -19,6 +19,10 @@ Access to the `raw_audio` stream has been promised, but has not yet been release
 In the meantime, I will still build the app, and simply switch the event handler to trigger when Vector hears the `wake_word`.
 It should be easy to move the event handler to the `sudden_noise` event once we have access to the audio stream.
 
+
+![vector_view](https://user-images.githubusercontent.com/42702189/54431677-48d64300-46e4-11e9-817a-961f74c1f235.png)
+_What Vector sees_
+
 Now, the challenge is to limit the video stream to ten seconds, and then save the video stream to memory.
 
 My alternate idea was to design animated behavior to trigger when someone asks, "What time is it?"
