@@ -2,7 +2,7 @@
 
 ![](https://www.jbhifi.co.nz/FileLibrary/ProductResources/Images/111696-L-LO.jpg)
 
-The basic premise for this app was formed from observing Vector.
+The basic premise for this app was formed from observing the Vector robot I bought my daughter for a "pet" for the holidays.
 When Vector charges, it assumes a "relaxed" posture and its display portrays mostly-closed eyes.
 If there is a loud noise, Vector "wakes up" and looks startled.
 My goal is to build an app that reacts to these sudden noises by taking a short video or by taking several still images in sequence.
