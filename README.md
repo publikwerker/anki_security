@@ -24,14 +24,21 @@ Now, the challenge is to limit the video stream to ten seconds, and then save th
 My alternate idea was to design animated behavior to trigger when someone asks, "What time is it?"
 Unfortunately, the SDK doesn't provide access to word recognition, either.
 
-Two days into my Python education, and things are going well.
+• Two days into my Python education, and things are going well.
 I'm able to use what I know of ES6 and extrapolate it to Python.
 The learning curve doesn't seem as sharp.
 This time, though, I am teaching myself, so it feels like more "work" to learn it.
 I'm able to watch tutorials and apply little bits to my programs.
 Learning Python is definitely easier than learning JavaScript.
 My learning style of reading and implementing seems to be working: I'm building a solid knowledge base, but I'm stuck on the implementation.
-I spent the first day doing exercises and reading the basics.
+
+• Day three: I spent the first day doing exercises and reading the basics.
 The second day was researching the Anki API and doing more basic exercises.
 Today, I'll be fleshing out my Anki app. I'm to have a MVP by the end of the day.
 Definitely doable.
+
+• Day five, and I'm behind schedule.
+My major roadblocks have been two-fold:
+First, I've thus-far been unable to save the video stream to memory. 
+I haven't grokked OpenCV or PIL documentation, and I feel like I've been spinning my wheels for three days.
+Secondly, I'm having trouble with Python event handling, and I haven't gotten Vector to react to my voice prompts.
